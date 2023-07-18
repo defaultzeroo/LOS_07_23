@@ -4,6 +4,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemo
 
 from config import TOKEN_API, HELP_INFO
 
+import time
 # Для клавиатуры нам понадобится объект, который будет отвечать за клавиатуру
 # Также понадобится объект, который отвечает за кнопку
 # Понадобится функция, которая будет вызывать создание клавиатуры при исполнении какой-то команды
@@ -46,8 +47,11 @@ async def command_start(message: types.Message):
 
 @dispatcher.message_handler(commands=['photo'])
 async def command_photo(message: types.Message):
+    url = 'https://cataas.com/cat/says/hello%20world!'
+    unique_url = f"{url}?timestamp={int(time.time())}"
+
     await bot.send_photo(chat_id=message.chat.id,
-                         photo='https://cataas.com/cat/says/hello%20world!')  # Обязтельно указывать с расширением файла
+                         photo=unique_url)  # Обязтельно указывать с расширением файла
 
     await message.delete()
 
