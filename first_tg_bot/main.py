@@ -6,7 +6,6 @@ bot = Bot(TOKEN_API)
 dispatcher = Dispatcher(bot)
 
 
-
 @dispatcher.message_handler(commands=['start'])
 async def msg(message: types.Message):
     await message.answer('Hello, world!')
@@ -15,7 +14,6 @@ async def msg(message: types.Message):
 @dispatcher.message_handler()
 async def msg(message: types.Message):
     await message.answer(message.text)
-
 
 
 if __name__ == '__main__':
