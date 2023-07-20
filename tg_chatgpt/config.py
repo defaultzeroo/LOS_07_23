@@ -4,9 +4,13 @@ HELP_INFO = '''
 /start - start 
 /help - help
 /photo - return random photo
-/disable - disable keyboard
+/disable - disable keyboard_menu
+/likes - show likes/dislikes
 '''
 
 DESCRIPTION_INFO = '''
 description
 '''
+
+likes_number = 0
+dislikes_number = 0
